@@ -2,12 +2,6 @@
 simulate_experiment_te.py
 =========================
 
-This script provides an enhanced simulation of the XAI‑FUNGI user study.
-It attempts to more faithfully reproduce the conditions under which the
-human participants made their decisions by giving the language model
-access to both text and visual stimuli and by crafting prompts that
-explicitly instruct the model to role‑play as a named participant.
-
 Key features:
 
 1. **Slide images** – The original explanation deck (``ORIGINAL_VISUALIZATIONS_EN.pdf``)

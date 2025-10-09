@@ -1,12 +1,4 @@
 """
-simulate_experiment_pdf.py
-==========================
-
-This script automates the XAI‑FUNGI user‑study simulation using the
-original slide deck (in PDF form) as the source of the explanation
-summary.  It reads participant characteristics, classification tasks,
-and ground‑truth responses, then simulates each participant’s answers
-using a large language model (LLM).
 
 Key features:
 
