@@ -1,7 +1,7 @@
 """
 Usage example:
 
-export OPENAI_API_KEY='sk-...'
+export OPENAI_API_KEY=''
 python simulate_experiment_te.py \
   --characteristics_file SURVEY_en.csv \
   --tasks_file PROBLEMS_en.csv \
