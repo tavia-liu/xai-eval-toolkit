@@ -1,0 +1,79 @@
+problem_id,participant_id,participant_decision_en,participant_certainty_en,decision_sim,certainty_sim,dec_true,dec_sim,cert_true,cert_sim
+__P1__,DR_IT_05,edible,moderately uncertain  ,non-edible,definitely_certain,edible,non-edible,moderately_uncertain,definitely_certain
+__P2__,DR_IT_05,non-edible,moderately uncertain  ,non-edible,cannot_assess,non-edible,non-edible,moderately_uncertain,cannot_assess
+__P3__,DR_IT_05,non-edible,definitely uncertain  ,non-edible,moderately_certain,non-edible,non-edible,definitely_uncertain,moderately_certain
+__P1__,DR_SSH_01,non-edible,definitely certain  ,edible,moderately_uncertain,non-edible,edible,definitely_certain,moderately_uncertain
+__P2__,DR_SSH_01,non-edible,moderately certain  ,edible,cannot_assess,non-edible,edible,moderately_certain,cannot_assess
+__P3__,DR_SSH_01,edible,moderately certain  ,non-edible,moderately_certain,edible,non-edible,moderately_certain,moderately_certain
+__P1__,DR_SSH_02,non-edible,moderately certain  ,non-edible,moderately_uncertain,non-edible,non-edible,moderately_certain,moderately_uncertain
+__P2__,DR_SSH_02,non-edible,I can't assess  ,edible,moderately_certain,non-edible,edible,cannot_assess,moderately_certain
+__P3__,DR_SSH_02,non-edible,moderately uncertain  ,non-edible,cannot_assess,non-edible,non-edible,moderately_uncertain,cannot_assess
+__P1__,DR_SSH_03,non-edible,moderately certain  ,non-edible,moderately_uncertain,non-edible,non-edible,moderately_certain,moderately_uncertain
+__P2__,DR_SSH_03,non-edible,I can't assess  ,non-edible,cannot_assess,non-edible,non-edible,cannot_assess,cannot_assess
+__P3__,DR_SSH_03,edible,moderately certain  ,non-edible,moderately_uncertain,edible,non-edible,moderately_certain,moderately_uncertain
+__P1__,DR_SSH_04,edible,definitely uncertain  ,non-edible,definitely_uncertain,edible,non-edible,definitely_uncertain,definitely_uncertain
+__P2__,DR_SSH_04,non-edible,definitely uncertain  ,edible,cannot_assess,non-edible,edible,definitely_uncertain,cannot_assess
+__P3__,DR_SSH_04,edible,moderately certain  ,non-edible,definitely_certain,edible,non-edible,moderately_certain,definitely_certain
+__P1__,DR_SSH_06,non-edible,moderately uncertain  ,non-edible,moderately_certain,non-edible,non-edible,moderately_uncertain,moderately_certain
+__P2__,DR_SSH_06,non-edible,moderately uncertain  ,edible,moderately_uncertain,non-edible,edible,moderately_uncertain,moderately_uncertain
+__P3__,DR_SSH_06,edible,moderately uncertain  ,non-edible,moderately_certain,edible,non-edible,moderately_uncertain,moderately_certain
+__P1__,DR_SSH_07,edible,moderately certain  ,non-edible,moderately_uncertain,edible,non-edible,moderately_certain,moderately_uncertain
+__P2__,DR_SSH_07,edible,moderately certain  ,edible,moderately_uncertain,edible,edible,moderately_certain,moderately_uncertain
+__P3__,DR_SSH_07,edible,moderately certain  ,non-edible,definitely_certain,edible,non-edible,moderately_certain,definitely_certain
+__P1__,MK_IT_03,non-edible,moderately certain  ,edible,cannot_assess,non-edible,edible,moderately_certain,cannot_assess
+__P2__,MK_IT_03,edible,moderately certain  ,non-edible,moderately_uncertain,edible,non-edible,moderately_certain,moderately_uncertain
+__P3__,MK_IT_03,edible,moderately certain  ,edible,cannot_assess,edible,edible,moderately_certain,cannot_assess
+__P1__,MK_IT_06,non-edible,definitely certain  ,edible,moderately_certain,non-edible,edible,definitely_certain,moderately_certain
+__P2__,MK_IT_06,non-edible,definitely certain  ,non-edible,definitely_uncertain,non-edible,non-edible,definitely_certain,definitely_uncertain
+__P3__,MK_IT_06,non-edible,definitely certain  ,non-edible,definitely_certain,non-edible,non-edible,definitely_certain,definitely_certain
+__P1__,MK_SSH_02,non-edible,moderately uncertain  ,non-edible,definitely_certain,non-edible,non-edible,moderately_uncertain,definitely_certain
+__P2__,MK_SSH_02,non-edible,moderately certain  ,non-edible,moderately_uncertain,non-edible,non-edible,moderately_certain,moderately_uncertain
+__P3__,MK_SSH_02,edible,moderately uncertain  ,non-edible,definitely_certain,edible,non-edible,moderately_uncertain,definitely_certain
+__P1__,MK_SSH_04,edible,moderately uncertain  ,edible,definitely_uncertain,edible,edible,moderately_uncertain,definitely_uncertain
+__P2__,MK_SSH_04,edible,moderately uncertain  ,edible,definitely_uncertain,edible,edible,moderately_uncertain,definitely_uncertain
+__P3__,MK_SSH_04,non-edible,I can't assess  ,non-edible,definitely_certain,non-edible,non-edible,cannot_assess,definitely_certain
+__P1__,MK_SSH_05,non-edible,moderately certain  ,non-edible,cannot_assess,non-edible,non-edible,moderately_certain,cannot_assess
+__P2__,MK_SSH_05,edible,definitely certain  ,edible,moderately_uncertain,edible,edible,definitely_certain,moderately_uncertain
+__P3__,MK_SSH_05,non-edible,moderately certain  ,non-edible,definitely_uncertain,non-edible,non-edible,moderately_certain,definitely_uncertain
+__P1__,MK_SSH_07,non-edible,I can't assess  ,non-edible,cannot_assess,non-edible,non-edible,cannot_assess,cannot_assess
+__P2__,MK_SSH_07,non-edible,moderately certain  ,non-edible,moderately_uncertain,non-edible,non-edible,moderately_certain,moderately_uncertain
+__P3__,MK_SSH_07,edible,moderately uncertain  ,edible,moderately_uncertain,edible,edible,moderately_uncertain,moderately_uncertain
+__P1__,MW_IT_02,non-edible,moderately uncertain  ,non-edible,cannot_assess,non-edible,non-edible,moderately_uncertain,cannot_assess
+__P2__,MW_IT_02,edible,moderately certain  ,non-edible,cannot_assess,edible,non-edible,moderately_certain,cannot_assess
+__P3__,MW_IT_02,edible,moderately certain  ,edible,definitely_uncertain,edible,edible,moderately_certain,definitely_uncertain
+__P1__,MW_IT_06,edible,definitely certain  ,edible,moderately_uncertain,edible,edible,definitely_certain,moderately_uncertain
+__P2__,MW_IT_06,non-edible,definitely certain  ,edible,moderately_uncertain,non-edible,edible,definitely_certain,moderately_uncertain
+__P3__,MW_IT_06,edible,definitely certain  ,non-edible,definitely_uncertain,edible,non-edible,definitely_certain,definitely_uncertain
+__P1__,MW_IT_07,edible,moderately certain  ,edible,cannot_assess,edible,edible,moderately_certain,cannot_assess
+__P2__,MW_IT_07,non-edible,moderately certain  ,edible,definitely_certain,non-edible,edible,moderately_certain,definitely_certain
+__P3__,MW_IT_07,non-edible,definitely certain  ,edible,definitely_uncertain,non-edible,edible,definitely_certain,definitely_uncertain
+__P1__,MW_SSH_01,non-edible,moderately uncertain  ,edible,cannot_assess,non-edible,edible,moderately_uncertain,cannot_assess
+__P2__,MW_SSH_01,non-edible,moderately uncertain  ,non-edible,cannot_assess,non-edible,non-edible,moderately_uncertain,cannot_assess
+__P3__,MW_SSH_01,non-edible,moderately uncertain  ,non-edible,moderately_certain,non-edible,non-edible,moderately_uncertain,moderately_certain
+__P1__,MW_SSH_03,non-edible,moderately certain  ,edible,definitely_certain,non-edible,edible,moderately_certain,definitely_certain
+__P2__,MW_SSH_03,non-edible,moderately certain  ,non-edible,moderately_uncertain,non-edible,non-edible,moderately_certain,moderately_uncertain
+__P3__,MW_SSH_03,edible,moderately uncertain  ,edible,moderately_certain,edible,edible,moderately_uncertain,moderately_certain
+__P1__,MW_SSH_04,edible,moderately certain  ,edible,moderately_uncertain,edible,edible,moderately_certain,moderately_uncertain
+__P2__,MW_SSH_04,non-edible,moderately certain  ,non-edible,moderately_certain,non-edible,non-edible,moderately_certain,moderately_certain
+__P3__,MW_SSH_04,edible,I can't assess  ,edible,definitely_certain,edible,edible,cannot_assess,definitely_certain
+__P1__,MW_SSH_05,non-edible,moderately certain  ,edible,moderately_certain,non-edible,edible,moderately_certain,moderately_certain
+__P2__,MW_SSH_05,edible,moderately certain  ,edible,definitely_certain,edible,edible,moderately_certain,definitely_certain
+__P3__,MW_SSH_05,edible,definitely certain  ,edible,definitely_certain,edible,edible,definitely_certain,definitely_certain
+__P1__,MZ_IT_05,,I can't assess  ,edible,cannot_assess,,edible,cannot_assess,cannot_assess
+__P2__,MZ_IT_05,non-edible,moderately certain  ,edible,cannot_assess,non-edible,edible,moderately_certain,cannot_assess
+__P3__,MZ_IT_05,edible,moderately certain  ,edible,definitely_certain,edible,edible,moderately_certain,definitely_certain
+__P1__,MZ_IT_06,edible,moderately uncertain  ,non-edible,definitely_certain,edible,non-edible,moderately_uncertain,definitely_certain
+__P2__,MZ_IT_06,edible,I can't assess  ,edible,cannot_assess,edible,edible,cannot_assess,cannot_assess
+__P3__,MZ_IT_06,edible,I can't assess  ,non-edible,definitely_certain,edible,non-edible,cannot_assess,definitely_certain
+__P1__,MZ_SSH_02,edible,moderately certain  ,edible,cannot_assess,edible,edible,moderately_certain,cannot_assess
+__P2__,MZ_SSH_02,edible,I can't assess  ,non-edible,definitely_certain,edible,non-edible,cannot_assess,definitely_certain
+__P3__,MZ_SSH_02,edible,moderately certain  ,non-edible,moderately_certain,edible,non-edible,moderately_certain,moderately_certain
+__P1__,MZ_SSH_03,edible,moderately certain  ,non-edible,definitely_certain,edible,non-edible,moderately_certain,definitely_certain
+__P2__,MZ_SSH_03,non-edible,moderately certain  ,edible,moderately_certain,non-edible,edible,moderately_certain,moderately_certain
+__P3__,MZ_SSH_03,edible,moderately certain  ,edible,moderately_certain,edible,edible,moderately_certain,moderately_certain
+__P1__,MZ_SSH_04,edible,definitely uncertain  ,edible,definitely_uncertain,edible,edible,definitely_uncertain,definitely_uncertain
+__P2__,MZ_SSH_04,non-edible,definitely uncertain  ,non-edible,definitely_certain,non-edible,non-edible,definitely_uncertain,definitely_certain
+__P3__,MZ_SSH_04,non-edible,moderately uncertain  ,edible,moderately_certain,non-edible,edible,moderately_uncertain,moderately_certain
+__P1__,MZ_SSH_07,edible,moderately certain  ,non-edible,cannot_assess,edible,non-edible,moderately_certain,cannot_assess
+__P2__,MZ_SSH_07,non-edible,I can't assess  ,edible,moderately_uncertain,non-edible,edible,cannot_assess,moderately_uncertain
+__P3__,MZ_SSH_07,edible,definitely uncertain  ,non-edible,moderately_certain,edible,non-edible,definitely_uncertain,moderately_certain

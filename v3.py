@@ -1,12 +1,6 @@
 """
 simulate_xai_fungi_te_v2.py
 ==================================
-(base) buzhaoliu@Buzhaos-MacBook-Air xai-eval-toolkit % python simulate_xai_fungi_te_v2.py \
-  --characteristics_file SURVEY_en.csv \
-  --tasks_file PROBLEMS_en.csv \
-  --ground_truth_file PROBLEMS_RESPONSES.csv \
-  --model gpt-3.5-turbo-instruct \
-  --temperature 1.0
 
 """
 
@@ -77,7 +71,7 @@ Mushroom Characteristics:
 
 Decision: {decision}
 
-Your confidence in making this decision is:"""
+Your confidence in this assessment is:"""
 
     certainty_levels = {
         "definitely_certain": base + " definitely certain",
@@ -95,7 +89,13 @@ Your confidence in making this decision is:"""
 # ============================================================================
 
 def build_persona_background(survey_row: pd.Series, group: str) -> str:
-
+    """
+    Build comprehensive persona from survey data.
+    
+    Following TE methodology: use extensive background to capture individual differences.
+    The more context we provide, the better the simulation should match real behavior.
+    """
+    
     # ============================================================================
     # 1. GROUP IDENTITY AND ROLE
     # ============================================================================
@@ -111,7 +111,7 @@ def build_persona_background(survey_row: pd.Series, group: str) -> str:
     persona_parts = [group_descriptions.get(group, "You are a research participant.")]
     
     # ============================================================================
-    # 2. MUSHROOM KNOWLEDGE 
+    # 2. MUSHROOM KNOWLEDGE (CRITICAL FOR THIS TASK)
     # ============================================================================
     
     mushroom_knowledge = []
@@ -228,7 +228,7 @@ def build_persona_background(survey_row: pd.Series, group: str) -> str:
     if study_program_col in survey_row.index:
         val = survey_row[study_program_col]
         if pd.notna(val) and str(val).strip():
-            education.append(f"Your current study program: {val}")
+            education.append(f"Study program: {val}")
     
     if education:
         persona_parts.append("\nYour Educational Background:")
@@ -309,6 +309,7 @@ IMPORTANT CAVEATS:
     return explanation
 
 def format_mushroom_characteristics(task_row: pd.Series) -> str:
+    """Format mushroom features concisely."""
     
     exclude = {"problem_id", "model_class", "model_probability"}
     
@@ -412,7 +413,6 @@ def simulate_decision_with_logprobs(
         "logprob_non_edible": logprob_non_edible
     }
 
-
 def simulate_certainty_with_logprobs(
     background: str,
     explanation: str,
@@ -421,38 +421,68 @@ def simulate_certainty_with_logprobs(
     client: OpenAI,
     settings: ModelSettings
 ) -> Dict[str, float]:
-    """Simulate certainty using probability distribution over 5 levels."""
+    """Simulate certainty using categorical probability distribution over A–E levels."""
     
-    certainty_prompts = create_certainty_prompt_template()
-    
+    certainty_options = {
+        "A": "definitely certain",
+        "B": "moderately certain",
+        "C": "I can’t assess",
+        "D": "moderately uncertain",
+        "E": "definitely uncertain"
+    }
+
+    # Build a single prompt template like decision simulation style
+    base_prompt = (
+        "You are assessing how certain the persona feels about their decision.\n"
+        "Options:\n"
+        "A. definitely certain\n"
+        "B. moderately certain\n"
+        "C. I can’t assess\n"
+        "D. moderately uncertain\n"
+        "E. definitely uncertain\n\n"
+        "Persona background: {background}\n"
+        "Decision: {decision}\n"
+        "Explanation: {explanation}\n"
+        "Mushroom characteristics: {characteristics}\n\n"
+        "Choose one option (A–E) that best describes the persona's certainty:"
+    )
+
+    prompt_filled = base_prompt.format(
+        background=background,
+        explanation=explanation,
+        characteristics=characteristics,
+        decision=decision
+    )
+
+    # Calculate logprob for each certainty option (A–E)
     logprobs = {}
-    
-    for certainty_level, prompt_template in certainty_prompts.items():
-        prompt_filled = prompt_template.format(
-            background=background,
-            explanation=explanation,
-            characteristics=characteristics,
-            decision=decision
-        )
-        
-        logprob, _ = get_completion_logprob(prompt_filled, client, settings)
-        logprobs[certainty_level] = logprob
+    for key in certainty_options.keys():
+        completion = f"{prompt_filled} {key}"
+        logprob, _ = get_completion_logprob(completion, client, settings)
+        logprobs[key] = logprob
         time.sleep(0.3)
-    
-    probs = {k: np.exp(v) for k, v in logprobs.items()}
+
+    # Convert to normalized probability distribution
+    scaled_logprobs = {k: v / 1.5 for k, v in logprobs.items()}  # smooths distribution
+    probs = {k: np.exp(v) for k, v in scaled_logprobs.items()}
     total = sum(probs.values())
-    
     if total > 0:
-        normalized_probs = {k: v/total for k, v in probs.items()}
+        normalized_probs = {k: v / total for k, v in probs.items()}
     else:
-        normalized_probs = {k: 0.2 for k in probs.keys()}
-    
-    certainty = max(normalized_probs.items(), key=lambda x: x[1])[0]
-    
+        normalized_probs = {k: 0.2 for k in probs.keys()}  # uniform fallback
+
+    # Pick the most likely certainty option
+    certainty_key = max(normalized_probs.items(), key=lambda x: x[1])[0]
+    certainty_label = certainty_options[certainty_key]
+
+    # Entropy = measure of certainty sharpness
+    certainty_entropy = -sum(p * np.log(p + 1e-10) for p in normalized_probs.values())
+
     return {
         **{f"p_{k}": v for k, v in normalized_probs.items()},
-        "certainty": certainty,
-        "certainty_entropy": -sum(p * np.log(p + 1e-10) for p in normalized_probs.values())
+        "certainty": certainty_label,
+        "certainty_key": certainty_key,
+        "certainty_entropy": certainty_entropy
     }
 
 
