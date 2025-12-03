@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 """
-Simple LLM Simulation: Does GPT-4o-mini replicate human Agreeableness → Generosity patterns?
+LLM Personality Simulation Study
+
+Investigates whether GPT-4o-mini replicates human personality-behavior patterns,
+specifically examining the relationship between Big Five Agreeableness traits
+and generosity in Dictator Game outcomes.
+
+Requirements:
+    pip install openai pandas numpy scipy scikit-learn matplotlib seaborn
+
+License: MIT
 """
 from scipy import stats
 import numpy as np
@@ -20,8 +29,8 @@ import time
 from datetime import datetime
 
 # Config
-OUTPUT_DIR = '/users/buzhaoliu/developer/xai-eval-toolkit/'
-INPUT_CSV = '/users/buzhaoliu/developer/xai-eval-toolkit/bigfive.csv'
+OUTPUT_DIR = '' # Replace with your desired output directory
+INPUT_CSV = '' # Replace with path to input CSV file containing human data
 
 # Check API key
 API_KEY = os.environ.get('OPENAI_API_KEY')

@@ -1,4 +1,0 @@
-problem_id,cap_diameter_cm,cap_shape,cap_surface,cap_color,does_bruise_or_bleed,gill_attachment,gill_spacing,gill_color,stem_height_cm,stem_width_mm,stem_root,stem_surface,stem_color,veil_type,veil_color,has_ring,ring_type,spore_print_color,habitat,season,model_class,model_probability
-__P1__,"17,37",convex,shiny,orange,no_bruises_or_bleeding,free,N/A,white,"18,1","18,27",bulbous,scaly,white,universal,white,ring,grooved,N/A,woods,summer,edible,"0,54"
-__P2__,"5,56",convex,scaly,brown,no_bruises_or_bleeding,free,close,pink,"4,64","9,5",N/A,scaly,brown,N/A,N/A,none,none,N/A,woods,summer,edible,"0,95"
-__P3__,"11,68",flat,sticky,green,bruises_or_bleeding,decurrent,close,brown,"6,58","16,6",N/A,N/A,brown,N/A,N/A,none,none,N/A,heaths,autumn,poisonous,1
